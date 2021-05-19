@@ -124,3 +124,16 @@ print(mappedNumbers)
 let sortedNumbers = numbers.sorted { $0 < $1 }
 print(sortedNumbers)
 
+// コメント反映される?
+
+
+
+
+
+
+
+
+
+
+
+

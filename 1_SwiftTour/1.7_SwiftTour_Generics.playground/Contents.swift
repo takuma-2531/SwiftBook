@@ -10,15 +10,19 @@ func makeArray<Item>(repeating item: Item, numberOfTimes: Int) -> [Item] {
 
 makeArray(repeating: "knock", numberOfTimes: 4)
 
-// 関連型
+// 関連型（Associated Value）
 enum OptionalValue<Wrapped> {
     case none
     case some(Wrapped)
 }
 
+// enumの関連型の中身を取り出すのはswitchを使わないとできない？
+// https://qiita.com/hachinobu/items/392c96820588d1c03b0c
+// こんな感じでいけそう
 var possibleIntegger: OptionalValue<Int> = .none
 possibleIntegger = .some(100)
 
+// 同じ要素があればture、なければfalse
 func anyCommonElement<T: Sequence, U: Sequence>(_ lhs: T, _ rhs: U) -> Bool
 where T.Element: Equatable, T.Element == U.Element {
     for lhsItem in lhs {
@@ -31,9 +35,11 @@ where T.Element: Equatable, T.Element == U.Element {
     return false
 }
 
+// true
 anyCommonElement([1, 2, 3], [3])
 //anyCommonElement(["1", "2", "3"], ["3"])
 
+// 引数に共通しているものを配列に返す
 func anyCommonElementArray<T: Sequence, U: Sequence>(_ lhs: T, _ rhs: U) -> [T.Element]
 where T.Element: Equatable, T.Element == U.Element {
     var element = [T.Element]()
@@ -47,6 +53,7 @@ where T.Element: Equatable, T.Element == U.Element {
     return element
 }
 
+// [2, 4, 6]
 anyCommonElementArray([1, 2, 3, 4, 5, 6], [2, 4, 6, 8, 10])
 
 

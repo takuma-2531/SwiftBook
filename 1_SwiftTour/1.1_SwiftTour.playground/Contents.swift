@@ -1,9 +1,9 @@
 import UIKit
 
-//let lavel = "The width is "
-//let width = 94
-//
-//let widthLabel = lavel + String(width)
+let lavel = "The width is "
+let width = 94
+
+let widthLabel = lavel + String(width)
 
 
 //let apples = 3
