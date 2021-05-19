@@ -43,3 +43,66 @@ aaa.a
 let test: aaa = aaa.init()
 
 
+// タプル
+
+let http404Error = (404, "Not Found")
+// こんなことできるんかい
+let (statusCode, statusMessage) = http404Error
+print(statusCode) // 404
+print(statusMessage) // Not Found
+
+let (justTheStatusCode, _) = http404Error
+print(justTheStatusCode) // 404
+
+print(http404Error.0) // 404
+print(http404Error.1) // Not Found
+
+
+let http200Status = (statusCode: 200, description: "OK")
+print(http200Status.statusCode) // 200
+print(http200Status.0) //200
+print(http200Status.description) // OK
+
+
+// Optional
+let possibleNumber = "123"
+let convertedNumber = Int(possibleNumber)
+
+var serverResponseCode: Int? = 404
+serverResponseCode = nil
+
+var surveyAnswer: String? // nil
+
+if convertedNumber != nil {
+    print("convertedNumber contains some interger value")
+    print("value of \(convertedNumber!)")
+}
+
+
+// Optional Binding
+// これ、変数にしたかったらvarにすれば良いんだって、知らんかった。どこで使うんかな？
+if let actualNumber = Int(possibleNumber) {
+    print("The string \"\(possibleNumber)\" has an integer value of \(actualNumber)")
+} else {
+    print("couldn't be converted")
+}
+
+
+if let firstNumber = Int("4"), let secondNumber = Int("42"),
+   firstNumber < secondNumber && secondNumber < 100 {
+    print("\(firstNumber) < \(secondNumber) < 100")
+}
+
+if let firstNumber = Int("4") {
+    if let secondNumber = Int("42") {
+        if firstNumber < secondNumber && secondNumber < 100 {
+            print("\(firstNumber) < \(secondNumber) < 100")
+        }
+    }
+}
+
+
+
+
+
+

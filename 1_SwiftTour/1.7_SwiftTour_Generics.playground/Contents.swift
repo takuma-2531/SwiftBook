@@ -14,6 +14,7 @@ makeArray(repeating: "knock", numberOfTimes: 4)
 enum OptionalValue<Wrapped> {
     case none
     case some(Wrapped)
+    
 }
 
 // enumの関連型の中身を取り出すのはswitchを使わないとできない？
@@ -21,6 +22,8 @@ enum OptionalValue<Wrapped> {
 // こんな感じでいけそう
 var possibleIntegger: OptionalValue<Int> = .none
 possibleIntegger = .some(100)
+
+
 
 // 同じ要素があればture、なければfalse
 func anyCommonElement<T: Sequence, U: Sequence>(_ lhs: T, _ rhs: U) -> Bool

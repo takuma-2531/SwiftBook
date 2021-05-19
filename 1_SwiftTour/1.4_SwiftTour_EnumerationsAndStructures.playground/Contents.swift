@@ -102,7 +102,17 @@ let threeOfSpades = Card(rank: .three, suit: .spades)
 let threeOfSpadesDescription = threeOfSpades.simpleDescription()
 
 
+// https://qiita.com/hachinobu/items/392c96820588d1c03b0c
+enum Barcode {
+    case upca(Int, Int, Int, Int)
+    case qrcode(String)
+}
 
+let productBarcode = Barcode.upca(8, 8938, 51294, 3)
+
+if case let Barcode.upca(code) = productBarcode {
+    print(code.0)
+}
 
 
 
