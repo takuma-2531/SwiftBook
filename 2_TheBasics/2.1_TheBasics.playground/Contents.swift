@@ -102,7 +102,23 @@ if let firstNumber = Int("4") {
 }
 
 
+let possibleString: String? = "An optional string."
+let forceString: String = possibleString!
 
+let assumedString: String! = "An implicitly unwrapped optional string."
+let implicitString: String = assumedString
+let optionalString = assumedString // String?型になる
+
+// 暗黙的にラップされていないオプション値を使用する場合、Swiftは最初にそれを通常のオプション値として使用しようとします。
+// オプションとして使用できない場合、Swiftは値を強制的にアンラップします。
+
+if assumedString != nil {
+  print(assumedString!)
+}
+
+if let definiteString = assumedString {
+  print(definiteString)
+}
 
 
 
