@@ -24,3 +24,7 @@ if age > 10 {
     assertionFailure("A person's age can't be less than zero")
 }
 
+let index = 3
+precondition(index > 0, "Index must be greater than zero")
+
+// スタブ、ドライバ
