@@ -6,7 +6,7 @@ let (x, y) = (1, 2)
 
 let helloWorld = "hello, " + "world"
 
--9 % 4 // -1
+-9 % 4 // -9 = (4 x -2) + -1
 
 var aa = 1
 aa += 2 // 値を返すわけではない
@@ -28,5 +28,35 @@ print(aa += 2) // ()を表示する
 let c: String? = "not nil"
 c ?? "nil"
 c != nil ? c! : "nil"
+
+for index in 1...5 {
+    print("\(index) times 5 is \(index * 5)")
+}
+
+let names = ["Anna", "Alex", "Brian", "Jack"]
+let count = names.count
+for i in 0..<count {
+    print("Person \(i + 1) is called \(names[i])")
+}
+
+// これ便利ね
+for name in names[2...] {
+    print(name)
+}
+
+//for name in names[...2] {
+//    print(name)
+//}
+
+let range = 1..<5
+range.contains(9) // false
+range.contains(1) // true
+range.contains(-2) // true
+
+...5 // PartialRangeThrough<Int>
+..<5 // PartialRangeUpTo<Int>
+1...5 // ClosedRange<Int>
+1..<5 // Range<Int>
+// 色んな型があるもんだ
 
 
