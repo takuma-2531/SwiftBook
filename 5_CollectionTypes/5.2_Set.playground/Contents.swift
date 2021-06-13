@@ -56,6 +56,7 @@ houseAnimals.isSubset(of: farmAnimals) // true
 farmAnimals.isSuperset(of: houseAnimals) // true
 farmAnimals.isDisjoint(with: cityAnimals) // true
 
+// Strictが入っていると、一致するものはfalseを返す
 houseAnimals.isStrictSubset(of: houseAnimals) // false
 houseAnimals.isStrictSubset(of: farmAnimals) // true
 houseAnimals.isStrictSuperset(of: farmAnimals) // false
